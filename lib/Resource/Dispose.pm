@@ -94,7 +94,7 @@ sub parser {
         $before .= "Guard::scope_guard { $var->DISPOSE if eval { $var->can('DISPOSE') } }; ";
     };
 
-    $before .= "$decl" if $linestr =~ /\s*=/;
+    $before .= "$decl" if $linestr =~ /\s*=/ and $decl =~ /^\s*(\$\w+|\(\s*\$\w+\s*\))\s*$/;
 
     set_linestr($before . $linestr);
 
