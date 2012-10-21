@@ -66,7 +66,7 @@ BEGIN { use_ok 'Resource::Dispose' };
     };
     is $@, '';
     is $My::Class::Dispose_Called, 1;
-} 
+}
 
 {
     $My::Class::Dispose_Called = '';
